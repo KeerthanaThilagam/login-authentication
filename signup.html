@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIGN UP PAGE</title>
+<style type="text/css">
+	body 
+	{
+		background: url(GIF4.gif) no-repeat;
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+		font-family: Verdana, sans-serif;
+       
+	}
+	h1{
+		text-align: center;
+	}
+.center{
+margin-left: auto;
+margin-right: auto;
+}
+table{
+         width: 500px;
+         border-collapse: collapse;
+         table-layout: fixed;
+}
+td{
+      vertical-align: top;
+      padding: 5px;
+      word-wrap: break-word;
+      
+}
+.label_col{
+              text-align: right;
+}
+
+.input_col  {
+               text-align: left;
+}
+
+.feedback_col{
+              text-align: center;
+              vertical-align: middle;
+              color: lightgray;
+              font-size: small;
+
+}
+
+#formelements{
+	    width: 20px;
+         left: 50%;
+         color: #fff;
+         background-position: center;
+}
+.button{
+	position: absolute;
+	top: 60%;
+	bottom: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.btn{
+	border: 1px solid #fff;
+	padding: 10px 30px;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.6s ease;
+}
+.btn:hover{
+	background-color: #fff;
+	color: #000;
+}
+	</style>
+<script type="text/javascript">
+
+function validatefirstname(){        //test input  for 2-15 characters
+                   var fname=document.getElementById("firstname").value;
+                   var re1=/^[a-zA-Z\s\'l\-]{2,15}$/;
+if  (re1.test(fname))  {  //if input is valid,update page to show successful entry
+                 document.getElementById("firstnameprompt").style.color="white";
+                 document.getElementById("firstnameprompt").innerHTML="<strong>valid</strong>";
+                 return (true);
+}
+else  {                   //if input is invalid,update page tp prompt for new input
+                     document.getElementById("firstnameprompt").style.color="pink";
+                     document.getElementById("firstnameprompt").innerHTML="<strong><br>enter required input</strong>";
+                     return(false);
+}
+}
+function validatelastname()  {   //test input for 2-25 allowed characters
+            var lname=document.getElementById("lastname").value;
+             var re2=/^[a-zA-Z\s\'I\-]{2,25}$/;
+if  (re2.test(lname))  {  //if input is valid,update page to show successful entry
+                 document.getElementById("lastnameprompt").style.color="white";
+                 document.getElementById("lastnameprompt").innerHTML="<strong>valid</strong>";
+                 return (true);
+}
+else  {                   //if input is invalid,update page tp prompt for new input
+                     document.getElementById("lastnameprompt").style.color="pink";
+                     document.getElementById("lastnameprompt").innerHTML="<strong><br>enter required input</strong>";
+                     return(false);
+}
+}
+
+function validateForm() {
+ var pass1=document.getElementById("password1").value;
+ var pass2=document.getElementById("password2").value;
+ if (pass1 == pass2)
+{
+   document.getElementById("passwordprompt").style.color="white";
+   document.getElementById("passwordprompt").innerHTML="<strong>Passwords match</strong>";
+    return(true);
+}
+else
+{
+     document.getElementById("passwordprompt").style.color="pink";
+    document.getElementById("passwordprompt").innerHTML="<strong><br>Passwords do not match</strong>";
+     return(false);
+}
+}
+
+function validateform(){  
+var name=document.myform.username.value;  
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}  
+}
+</script>
+</head>
+<body>
+	<form action=# id="myform" name="myform" onsubmit="return validateform()">
+		<fieldset>
+<table border="0" class="center">
+	<h1>Create An Account</h1>
+<tr>
+<td class="label_col">FIRST NAME:</td>
+<td class="input_col"><input name="firstname" id="firstname" type="text" onblur="validatefirstname();"></td>
+<td class="feedback_col"><span id="firstnameprompt">&nbsp;</span></td>
+</tr>
+<tr>
+<td class="label_col">LAST NAME:</td>
+<td class="input_col"><input name="lastname" id="lastname" type="text" onblur="validatelastname();"></td>
+<td class="feedback_col"><span id="lastnameprompt">&nbsp;</span></td>
+</tr>
+<tr>
+<td class="label_col">USER NAME:</td>
+<td class="input_col"><input name="username" id="username" type="text" onblur="validateform();"></td>
+<td class="feedback_col"><span id="usernameprompt">&nbsp;</span></td>
+</tr>
+<td class="label_col">USER PASSWORD:</td>
+<td class="input_col"><input id="password1" type="password" onblur="validateForm();"></td>
+<td class="feedback_col"><span id="passwordprompt"></span></td>
+</tr>
+<tr>
+
+<td class="label_col">CONFIRM PASSWORD:</td>
+<td class="input_col"><input id="password2" type="password" onblur="validateForm();"></td>
+<td class="feedback_col"><span id="passwordprompt"></span></td>
+</tr>
+   <div class="button">
+   <a href="index.html" class="btn">LOGIN</a>
+   </div>
+
+</fieldset>
+</form><br></table><br><br><br><br><br><br><br>
+</body>
+</html>
