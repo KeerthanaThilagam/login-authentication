@@ -1,0 +1,77 @@
+<html>
+<head>
+	<style>
+.button{
+	position: absolute;
+	top: 68%;
+	bottom: 50%;
+	left: 70%;
+	transform: translate(-50%,-50%);
+}
+.btn{
+	border: 1px solid #000;
+	padding: 10px 30px;
+	color: navy;
+	text-decoration: none;
+	transition: 0.6s ease;
+}
+.btn:hover{
+	background-color: navy;
+	color: #fff;
+}
+</style>
+	<meta charset="utf-8">
+	<title>LOGIN FORM</title>
+	<link rel="stylesheet" href="style1.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+	 
+	</head>
+	<body>
+		<p class="login"><br><b> LOGIN</b></br></br><i class="fas fa-user-circle" style="font-size:80px;"></i></p></br>
+
+ <div class="login-box">
+ 	
+ 	
+ 	<div class="textbox"><br><br><br><br><br><br><br>
+
+ 		<i class="fa fa-user" aria-hidden="true"></i>
+ 		<input type="text" placeholder="Username" name="Username" required>
+ 	</div>
+
+
+ 	<div class="textbox">
+ 		<i class="fa fa-lock" aria-hidden="true"></i>
+ 		<input type="password" placeholder="Password" name="password">
+ 	</div>
+ 	 <input class="me" type="checkbox">Remember me</br>
+ 	  <button  onclick="c()">Login <i class="fas fa-sign-in-alt"></i></button></br></br>
+
+ 	  <h4 onclick = "a()" class="forgot" > Forgot Password?</h4>
+ 	 <div class="button">
+ 	  	<a href="signup.html" class="btn">Sign up</a>
+</div>
+</div>
+
+<script>
+	function c(){
+		location.replace("dashboard.html");
+		alert("Logged in successfully");
+	}
+	function a()
+	{
+		alert("Reset the password");
+	}
+	function b(){
+		alert("sign up with google!!! ");
+	}
+
+</script>
+ 
+<marquee direction="right">Created by keerthana ,karthika ,Harshini</marquee>
+
+
+
+	</body>
+	
+
+</html>
